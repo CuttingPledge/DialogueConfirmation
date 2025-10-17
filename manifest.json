@@ -1,0 +1,10 @@
+{
+    "Name": "Dialogue Confirmation",
+    "Author": "CuttingPledge",
+    "Version": "1.0.0",
+    "Description": "Adds confirm logic to dialogue boxes",
+    "UniqueID": "CuttingPledge.DialogueConfirmation",
+    "EntryDll": "DialogueConfirmation.dll",
+    "MinimumApiVersion": "4.0.0",
+    "UpdateKeys": []
+}

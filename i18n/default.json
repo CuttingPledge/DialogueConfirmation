@@ -1,0 +1,8 @@
+{
+    "Bool.DoubleClickRegularDialogue.DisplayedName": "Double click dialogue",
+    "Bool.DoubleClickRegularDialogue.Tooltip": "Requires a double click to progress through dialogue boxes",
+    "Bool.ConfirmSleepDialogue.DisplayedName": "Confirm to sleep",
+    "Bool.ConfirmSleepDialogue.Tooltip": "Requires a double click to confirm going to sleep",
+    "Bool.ConfirmQuestionAnswer.DisplayedName": "Confirm answer",
+    "Bool.ConfirmQuestionAnswer.Tooltip": "Requires a double click to confirm an answer to a question"
+}
