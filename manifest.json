@@ -6,5 +6,5 @@
     "UniqueID": "CuttingPledge.DialogueConfirmation",
     "EntryDll": "DialogueConfirmation.dll",
     "MinimumApiVersion": "4.0.0",
-    "UpdateKeys": []
+    "UpdateKeys": [ "Nexus:38667" ]
 }
