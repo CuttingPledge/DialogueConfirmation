@@ -4,5 +4,17 @@
     "Bool.ConfirmSleepDialogue.DisplayedName": "Confirm to sleep",
     "Bool.ConfirmSleepDialogue.Tooltip": "Requires a double click to confirm going to sleep",
     "Bool.ConfirmQuestionAnswer.DisplayedName": "Confirm answer",
-    "Bool.ConfirmQuestionAnswer.Tooltip": "Requires a double click to confirm an answer to a question"
+    "Bool.ConfirmQuestionAnswer.Tooltip": "Requires a double click to confirm an answer to a question",
+    "Bool.ConfirmShopDialogue.DisplayedName": "Confirm shop dialogue",
+    "Bool.ConfirmShopDialogue.Tooltip": "Requires a double click to confirm shop response options",
+    "Bool.ConfirmMinecart.DisplayedName": "Confirm minecart option",
+    "Bool.ConfirmMinecart.Tooltip": "Requires a double click to confirm where you want to go on the minecart",
+    "Bool.ConfirmMineLadder.DisplayedName": "Confirm mine ladder option",
+    "Bool.ConfirmMineLadder.Tooltip": "Requires a double click to leave the mines",
+    "Bool.ConfirmEating.DisplayedName": "Confirm eating",
+    "Bool.ConfirmEating.Tooltip": "Requires a double click to confirm eating a food",
+    "Bool.ConfirmTV.DisplayedName": "Confirm TV channel",
+    "Bool.ConfirmTV.Tooltip": "Requires a double click to choose a TV channel",
+    "Bool.ConfirmPhone.DisplayedName": "Confirm phone option",
+    "Bool.ConfirmPhone.Tooltip": "Requires a double click to choose who to call on the telephone"
 }

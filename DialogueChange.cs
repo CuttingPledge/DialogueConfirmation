@@ -51,7 +51,6 @@ namespace DialogueConfirmation
             }
             else if (e.OldMenu is DialogueBox OldMenu)
             {
-
                 currentDiag = null;
                 currentResponse = -1;
             }
@@ -68,7 +67,49 @@ namespace DialogueConfirmation
                     // For some reason "dialogues" doesn't always have entries? The game's sleep question has it, but some other questions do not
                     if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0] == "Go to sleep for the night?")
                     {
-                        if (currentDiag.dialogues[0] == "Go to sleep for the night?" && _mod.Config.ConfirmSleepDialogue)
+                        if (_mod.Config.ConfirmSleepDialogue)
+                        {
+                            this.HandleQuestion(e.Button);
+                        }
+                    }
+                    else if (currentDiag.responses[0].responseText == "Shop" || currentDiag.responses[0].responseText == "Supplies Shop" || currentDiag.responses[0].responseText == "Donate To Museum")
+                    {
+                        if (_mod.Config.ConfirmShopDialogue)
+                        {
+                            this.HandleQuestion(e.Button);
+                        }
+                    }
+                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0] == "Choose destination:")
+                    {
+                        if (_mod.Config.ConfirmMinecart)
+                        {
+                            this.HandleQuestion(e.Button);
+                        }
+                    }
+                    else if (currentDiag.responses[0].responseText == "Leave the mine")
+                    {
+                        if (_mod.Config.ConfirmMineLadder)
+                        {
+                            this.HandleQuestion(e.Button);
+                        }
+                    }
+                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0].Substring(0, 4) == "Eat " && currentDiag.responses[0].responseText == "Yes")
+                    {
+                        if (_mod.Config.ConfirmEating)
+                        {
+                            this.HandleQuestion(e.Button);
+                        }
+                    }
+                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0] == "Select channel:")
+                    {
+                        if (_mod.Config.ConfirmTV)
+                        {
+                            this.HandleQuestion(e.Button);
+                        }
+                    }
+                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0] == "Please select a number:" || currentDiag.dialogues[0] == "Please make a selection:")
+                    {
+                        if (_mod.Config.ConfirmPhone)
                         {
                             this.HandleQuestion(e.Button);
                         }

@@ -24,6 +24,7 @@ namespace DialogueConfirmation
         // Suppresses all key input passed to it except for Escape and the Controller Back Button
         public void SupressKeyInput(SButton sButton)
         {
+            this.Monitor.Log($"Suppress key input", LogLevel.Debug);
             if (sButton != SButton.Escape || sButton != SButton.ControllerBack)
             {
                 try
@@ -78,6 +79,54 @@ namespace DialogueConfirmation
                 tooltip: () => this.Helper.Translation.Get("Bool.ConfirmQuestionAnswer.Tooltip"),
                 getValue: () => this.Config.ConfirmQuestionAnswer,
                 setValue: value => this.Config.ConfirmQuestionAnswer = value
+            );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("Bool.ConfirmShopDialogue.DisplayedName"),
+                tooltip: () => this.Helper.Translation.Get("Bool.ConfirmShopDialogue.Tooltip"),
+                getValue: () => this.Config.ConfirmShopDialogue,
+                setValue: value => this.Config.ConfirmShopDialogue = value
+            );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("Bool.ConfirmMinecart.DisplayedName"),
+                tooltip: () => this.Helper.Translation.Get("Bool.ConfirmMinecart.Tooltip"),
+                getValue: () => this.Config.ConfirmMinecart,
+                setValue: value => this.Config.ConfirmMinecart = value
+            );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("Bool.ConfirmMineLadder.DisplayedName"),
+                tooltip: () => this.Helper.Translation.Get("Bool.ConfirmMineLadder.Tooltip"),
+                getValue: () => this.Config.ConfirmMineLadder,
+                setValue: value => this.Config.ConfirmMineLadder = value
+            );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("Bool.ConfirmEating.DisplayedName"),
+                tooltip: () => this.Helper.Translation.Get("Bool.ConfirmEating.Tooltip"),
+                getValue: () => this.Config.ConfirmEating,
+                setValue: value => this.Config.ConfirmEating = value
+            );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("Bool.ConfirmTV.DisplayedName"),
+                tooltip: () => this.Helper.Translation.Get("Bool.ConfirmTV.Tooltip"),
+                getValue: () => this.Config.ConfirmTV,
+                setValue: value => this.Config.ConfirmTV = value
+            );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: () => this.Helper.Translation.Get("Bool.ConfirmPhone.DisplayedName"),
+                tooltip: () => this.Helper.Translation.Get("Bool.ConfirmPhone.Tooltip"),
+                getValue: () => this.Config.ConfirmPhone,
+                setValue: value => this.Config.ConfirmPhone = value
             );
         }
 
