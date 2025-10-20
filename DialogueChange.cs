@@ -100,6 +100,13 @@ namespace DialogueConfirmation
                             this.HandleQuestion(e.Button);
                         }
                     }
+                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0].Substring(0, 6) == "Drink " && currentDiag.responses[0].responseText == "Yes")
+                    {
+                        if (_mod.Config.ConfirmEating)
+                        {
+                            this.HandleQuestion(e.Button);
+                        }
+                    }
                     else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0] == "Select channel:")
                     {
                         if (_mod.Config.ConfirmTV)
@@ -107,7 +114,14 @@ namespace DialogueConfirmation
                             this.HandleQuestion(e.Button);
                         }
                     }
-                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0] == "Please select a number:" || currentDiag.dialogues[0] == "Please make a selection:")
+                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0] == "Please select a number:")
+                    {
+                        if (_mod.Config.ConfirmPhone)
+                        {
+                            this.HandleQuestion(e.Button);
+                        }
+                    }
+                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0] == "Please make a selection:")
                     {
                         if (_mod.Config.ConfirmPhone)
                         {

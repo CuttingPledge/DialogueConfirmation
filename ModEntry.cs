@@ -1,6 +1,7 @@
 ﻿using GenericModConfigMenu;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
+using StardewModdingAPI.Utilities;
 
 namespace DialogueConfirmation
 {
@@ -13,18 +14,24 @@ namespace DialogueConfirmation
 
         public override void Entry(IModHelper helper)
         {
-            diagChange = new DialogueChange(this);
-            Config = this.Helper.ReadConfig<ModConfig>();
-            helper.Events.GameLoop.GameLaunched += OnGameLaunched;
-            helper.Events.Input.ButtonPressed += diagChange.OnButtonPressed;
-            helper.Events.Display.MenuChanged += diagChange.Display_MenuChanged;
-            helper.Events.Display.RenderedActiveMenu += diagChange.DrawArrow;
+            if (Constants.TargetPlatform != GamePlatform.Android)
+            {
+                diagChange = new DialogueChange(this);
+                Config = this.Helper.ReadConfig<ModConfig>();
+                helper.Events.GameLoop.GameLaunched += OnGameLaunched;
+                helper.Events.Input.ButtonPressed += diagChange.OnButtonPressed;
+                helper.Events.Display.MenuChanged += diagChange.Display_MenuChanged;
+                helper.Events.Display.RenderedActiveMenu += diagChange.DrawArrow;
+            }
+            else
+            {
+                this.Monitor.Log($"Dialogue Confirmation is not supported on Android", LogLevel.Error);
+            }
         }
 
         // Suppresses all key input passed to it except for Escape and the Controller Back Button
         public void SupressKeyInput(SButton sButton)
         {
-            this.Monitor.Log($"Suppress key input", LogLevel.Debug);
             if (sButton != SButton.Escape || sButton != SButton.ControllerBack)
             {
                 try
