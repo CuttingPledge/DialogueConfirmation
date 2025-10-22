@@ -93,14 +93,14 @@ namespace DialogueConfirmation
                             this.HandleQuestion(e.Button);
                         }
                     }
-                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0].Substring(0, 4) == "Eat " && currentDiag.responses[0].responseText == "Yes")
+                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0].Length > 4 && currentDiag.dialogues[0].Substring(0, 4) == "Eat " && currentDiag.responses[0].responseText == "Yes")
                     {
                         if (_mod.Config.ConfirmEating)
                         {
                             this.HandleQuestion(e.Button);
                         }
                     }
-                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0].Substring(0, 6) == "Drink " && currentDiag.responses[0].responseText == "Yes")
+                    else if (currentDiag.dialogues.Count != 0 && currentDiag.dialogues[0].Length > 6 && currentDiag.dialogues[0].Substring(0, 6) == "Drink " && currentDiag.responses[0].responseText == "Yes")
                     {
                         if (_mod.Config.ConfirmEating)
                         {
@@ -173,7 +173,7 @@ namespace DialogueConfirmation
                         {
                             // Player choosing dialogue option
                         }
-                        else if (sButton == SButton.ControllerA || sButton == SButton.ControllerB)
+                        else if (sButton == SButton.ControllerA || sButton == SButton.ControllerB || sButton == SButton.ControllerX)
                         {
                             previousResponse = currentResponse;
                             currentResponse = currentDiag.selectedResponse;
